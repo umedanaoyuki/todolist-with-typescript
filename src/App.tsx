@@ -22,6 +22,17 @@ function App() {
         //画面のリロードの回避
       e.preventDefault();
 
+      //あたらしいTODOを作成
+        const newTodo: Todo = {
+            inputValue: inputValue,
+            id: todos.length,
+            checked: false
+        }
+
+        setTodos([newTodo, ...todos]);
+        //空文字を入れる
+        setInputValue("");
+
     };
 
   return (
@@ -32,6 +43,11 @@ function App() {
           <input type="text" onChange={(e) => handleChange(e)} className="inputText"></input>
           <input type="submit" value="作成" className="submitButton"></input>
         </form>
+          <ul>
+              {todos.map(todo => <li>
+                  {todo.inputValue}
+              </li>)}
+          </ul>
       </div>
     </div>
   );
