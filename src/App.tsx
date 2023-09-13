@@ -43,8 +43,9 @@ function App() {
           <input type="text" onChange={(e) => handleChange(e)} className="inputText"></input>
           <input type="submit" value="作成" className="submitButton"></input>
         </form>
-          <ul>
-              {todos.map(todo => <li>
+          <ul className="todoList">
+              {todos.map(todo =>
+                  <li key={todo.id}>
                   {todo.inputValue}
               </li>)}
           </ul>
