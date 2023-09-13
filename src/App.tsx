@@ -14,15 +14,21 @@ function App() {
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
+        setInputValue(e.target.value);
     }
-    
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        //画面のリロードの回避
+      e.preventDefault();
+
+    };
 
   return (
     <div className="App">
       <div>
         <h2>Todoリスト with Typescript</h2>
-        <form onSubmit={() => {}}>
+        <form onSubmit={(e) => handleSubmit(e)}>
           <input type="text" onChange={(e) => handleChange(e)} className="inputText"></input>
           <input type="submit" value="作成" className="submitButton"></input>
         </form>
