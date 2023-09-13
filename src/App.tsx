@@ -3,7 +3,15 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">testetset</div>
+    <div className="App">
+      <div>
+        <h2>Todoリスト with Typescript</h2>
+        <form onSubmit={() => {}}>
+          <input type="text" onChange={() => {}} className="inputText"></input>
+          <input type="submit" value="作成" className="submitButton"></input>
+        </form>
+      </div>
+    </div>
   );
 }
 
